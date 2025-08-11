@@ -1,10 +1,17 @@
 #include <BinaryBuffer.h>
 
+// To hammer home the point that big endian values must ABSOLUTELY be used, we are using boost's endian library
+// However, boost's library is not built for Arduino, so we are using a port: https://github.com/kekyo/BoostForArduino/tree/master
+// Thank you so much kekyo, this is a life saver!
+// Please install the library, or one like it, according to instructions
+#include <boost_endian_arithmetic.hpp>
+
 using cmbtl::BinaryBuffer;
-// We create a struct to hold our RPM values
+using RPM_type = boost::endian::big_int16_t;
+// We create a struct to hold our RPM values using big-endian integers
 struct RPM {
-  uint16_t front;
-  uint16_t rear;
+  RPM_type front;
+  RPM_type rear;
 
   // For arguments sake let us say that we know RPM will not exceed 2^12 - 1 = 4095 = max value held by uint16_t
   // We now define encode and decode functions for the struct
@@ -12,7 +19,7 @@ struct RPM {
     // Default constructor
     RPM() : front(0), rear(0) {}
 
-    RPM (uint16_t front, uint16_t rear) {
+    RPM (RPM_type front, RPM_type rear) {
       this->front = front;
       this->rear = rear;
     }
@@ -26,8 +33,8 @@ struct RPM {
 
     // Update values from buffer
     void decodeRPM(BinaryBuffer const &buffer) {
-      front = buffer.readValue<uint16_t>(12);
-      rear = buffer.readValue<uint16_t>(12);
+      front = buffer.readValue<RPM_type>(12);
+      rear = buffer.readValue<RPM_type>(12);
     }
 
     // Helper function to print RPM values
