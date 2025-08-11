@@ -10,7 +10,7 @@ I have taken pains to ensure that this library is const-correct. However, there 
 
 ## Big-Endian
 
-This library assumes big-endian storage of integers. This allows for the intended storage of integers in the buffer. For example, if you have a 16-bit integer, but for would like to store 12 bits, the algorithm requires big-endian byte-order to select bits from LSB to MSB. You can acheive this with boost's (endian library)[https://www.boost.org/doc/libs/1_88_0/libs/endian/doc/html/endian.html]. 
+This library assumes big-endian storage of integers. This allows for the intended storage of integers in the buffer. For example, if you have a 16-bit integer, but for would like to store 12 bits, the algorithm requires big-endian byte-order to select bits from LSB to MSB. You can acheive this with boost's [endian library](https://www.boost.org/doc/libs/1_88_0/libs/endian/doc/html/endian.html). 
 
 ## Testing
 This library has extensive unit testing. Unit tests include the intended use with boost's endian library.
