@@ -4,7 +4,7 @@
 # Except for these files
 !CMakeLists.txt
 !license.md
-!BinaryBuffer.h
+!src/*
 !BinaryBuffer_unittest.cpp
 !.gitignore
 !README.md

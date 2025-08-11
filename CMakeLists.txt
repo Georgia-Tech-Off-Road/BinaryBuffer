@@ -1,7 +1,7 @@
 #Disclaimer: Much of this code was taken from: https://github.com/google/googletest/tree/main/googletest
 
 add_library(BinaryBuffer INTERFACE)
-target_include_directories(BinaryBuffer INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/../")
+target_include_directories(BinaryBuffer INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 
 include(CTest)
 
