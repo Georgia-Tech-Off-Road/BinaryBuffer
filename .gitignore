@@ -7,3 +7,4 @@
 !BinaryBuffer.h
 !BinaryBuffer_unittest.cpp
 !.gitignore
+!README.md
