@@ -1,11 +1,22 @@
-# Ignore everything
-*
+# CMake Files
+# Retrieved from: https://github.com/github/gitignore/blob/main/CMake.gitignore
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+CMakeUserPresets.json
+DartConfiguration.tcl
 
-# Except for these files
-!CMakeLists.txt
-!license.md
-!src/*
-!BinaryBuffer_unittest.cpp
-!.gitignore
-!README.md
-!library.properties
+# Generated Test Files
+*BinaryBufferTest
+
+#
+lib/
+build/
