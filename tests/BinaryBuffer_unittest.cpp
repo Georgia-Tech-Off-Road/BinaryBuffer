@@ -1,6 +1,7 @@
 #include "BinaryBuffer.h"
 #include "gtest/gtest.h"
-#include "boost/endian/arithmetic.hpp"
+// From https://github.com/Georgia-Tech-Off-Road/BoostForArduino
+#include "boost_endian_arithmetic.hpp"
 
 using BinaryBuffer = cmbtl::BinaryBuffer;
 

@@ -1,9 +1,5 @@
 include(CTest)
 
-# To use Boost/endian
-# Implementation taken from: https://www.boost.org/doc/user-guide/building-with-cmake.html
-find_package(Boost REQUIRED)
-
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -16,10 +12,6 @@ FetchContent_MakeAvailable(googletest)
 
 # Now simply link against gtest or gtest_main as needed. Eg
 add_executable(BinaryBufferTest BinaryBuffer_unittest.cpp)
-target_link_libraries(BinaryBufferTest PUBLIC BinaryBuffer gtest_main)
-
-
-# Include Boost header files
-target_include_directories(BinaryBufferTest PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(BinaryBufferTest PUBLIC BinaryBuffer BoostForArduino gtest_main)
 
 add_test(NAME BinaryBufferTest COMMAND BinaryBufferTest)
