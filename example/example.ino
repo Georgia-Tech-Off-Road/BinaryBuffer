@@ -1,9 +1,9 @@
 #include <BinaryBuffer.h>
 
 // To hammer home the point that big endian values must ABSOLUTELY be used, we are using boost's endian library
-// However, boost's library is not built for Arduino, so we are using a port: https://github.com/kekyo/BoostForArduino/tree/master
-// Thank you so much kekyo, this is a life saver!
-// Please install the library, or one like it, according to instructions
+// However, boost's library is not built for Arduino, so we are using a port: https://github.com/Georgia-Tech-Off-Road/BoostForArduino/tree/master
+// Thank you so much kekyo for developing the ProxyHeaderBuilder tool, this is a life saver!
+// Please install this library according to instructions
 #include <boost_endian_arithmetic.hpp>
 
 using cmbtl::BinaryBuffer;
